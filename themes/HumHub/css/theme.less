@@ -2,23 +2,25 @@
 // Color variables
 // --------------------------------------------------
 
-// Background colors
+//stayzilla primary color: ed0974
+// Background colors, // shades of gray
 @colorBackground1: #f7f7f7;
 @colorBackground2: #ededed;
 @colorBackground3: #d7d7d7;
 @colorBackground4: #b2b2b2;
+@colorBackground5: #f5f5f5; //#f5f5f5 for stayzilla top bar
 
 // Bootstrap colors
 @colorDanger: #ff8989;
-@colorInfo: #6fdbe8;
+@colorInfo: #dc0463; // the secondary main color like guide etc
 @colorInfo2: #61c2d0;
 @colorSuccess: #97d271;
 @colorInfoLight: #dffcff;
 @colorWarning: #fdd198;
-@colorPrimary: #708fa0;
+@colorPrimary: #ed0974; //main color for topbar, buttons etc
 
-// Font colors
-@colorFont1: #bac2c7;
+// Font colors, // mostly shades of gray
+@colorFont1: #ffc2c7;
 @colorFont2: #7a7a7a;
 @colorFont3: #555555;
 @colorFont4: #bebebe;
@@ -71,7 +73,7 @@ input[type=text], input[type=password], input[type=select] {
 // x) Login
 // --------------------------------------------------
 .login-container {
-  background: @colorPrimary;
+  background: @colorBackground1;
 }
 
 #account-login-form {
@@ -96,11 +98,11 @@ input[type=text], input[type=password], input[type=select] {
 }
 
 #topbar-first {
-  background-color: @colorPrimary;
+  background-color: @colorBackground5;
   color: white;
 
   a {
-    color: white;
+    color: @colorPrimary;
   }
 
   .caret {
@@ -108,7 +110,11 @@ input[type=text], input[type=password], input[type=select] {
   }
 
   .btn-group > a {
-    background-color: lighten(@colorPrimary, 5%);
+    color: lighten(@colorPrimary, 5%);
+  }
+
+  .btn-group > a:hover {
+    color: lighten(@colorPrimary, 15%);
   }
 
   .btn-enter {
@@ -154,12 +160,12 @@ input[type=text], input[type=password], input[type=select] {
     text-align: right;
 
     span {
-      color: @colorBackground3;
+      color: @colorInfo;
     }
   }
 
   .dropdown.account > a, .dropdown.account.open > a, .dropdown.account > a:hover, .dropdown.account.open > a:hover {
-    background-color: @colorPrimary;
+    background-color: @colorBackground5;
   }
 
 }
@@ -541,7 +547,7 @@ input[type=text], input[type=password], input[type=select] {
 .nav-pills, .nav-tabs, .account {
 
   .dropdown-menu {
-    background-color: @colorPrimary;
+    background-color: @colorBackground1;
     border: none;
 
     li.divider {
@@ -551,7 +557,7 @@ input[type=text], input[type=password], input[type=select] {
     }
 
     li {
-      border-left: 3px solid @colorPrimary;
+      //border-left: 3px solid @colorPrimary;
 
       a {
         color: white;
@@ -575,7 +581,7 @@ input[type=text], input[type=password], input[type=select] {
     li:hover, li.selected {
       border-left: 3px solid @colorInfo;
       color: #ffffff !important;
-      background-color: darken(@colorPrimary, 5%) !important;
+      background-color: darken(@colorBackground1, 5%) !important;
     }
   }
 }

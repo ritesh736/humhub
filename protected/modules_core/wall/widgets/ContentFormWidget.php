@@ -73,8 +73,10 @@ class ContentFormWidget extends HWidget {
 
     public function run() {
 
-        if (!$this->hasWritePermission() || !(Yii::app()->user->isAdmin()))
-            return;
+        if (!$this->contentContainer->canPost()){
+          return;
+        }
+
 
         $this->renderForm();
 

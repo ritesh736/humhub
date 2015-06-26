@@ -547,6 +547,18 @@ class User extends HActiveRecordContentContainer implements ISearchable
         return false;
     }
 
+    public function canPost($userId = "")
+    {
+
+        if ($userId == "")
+            $userId = Yii::app()->user->id;
+
+        if ($userId == $this->id)
+            return true;
+
+        return false;
+    }
+
     /**
      * Returns an array of informations used by search subsystem.
      * Function is defined in interface ISearchable
